@@ -104,6 +104,7 @@ header {
 	padding-top:10px;
 	left:-10px;
 	z-index: 10;
+	top:40px;
 	/*display:none;/****************/
 }
 .nav-select-list {
@@ -326,7 +327,7 @@ header {
 	background-color: #1e1e1e;
 }
 /**********右侧导航下拉选择框样式**********/
-li.top_header_kaola .nav-select-list li a {
+.nav-select-list li a {
 	width:115px;
 }
 #header_main li .top_header_menu .nav-select-list li a:hover {
@@ -338,3 +339,9 @@ li.top_header_kaola .nav-select-list li a {
 .nav-select-appli,.nav-select-kaola,.nav-select-mail,.nav-select-pay,.nav-select-dianshang,.nav-select-huati,.nav-select-lofter,.nav-select-bobo {
 	display:none;
 }
+
+/***************顶部导航条结束******************/
+
+
+/******************主体部分内容********************/
+section 
