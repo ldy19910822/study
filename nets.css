@@ -1,0 +1,251 @@
+h1,h2,h3,h4,h5,h6,ul,li,dl,dd,dt,p,body {
+	margin:0;
+	padding:0;
+}
+.clear {
+	clear:both;
+}
+.lf {
+	float:left;
+}
+.rt {
+	float:right;
+} 
+.over {
+	overflow:hidden;
+}
+header,section,footer {
+	width:100%;
+}
+body {
+	font-size:12px;
+	font-family:Arial SimSun;
+}
+a {
+	text-decoration:none;
+}
+ul {
+	list-style:none;
+}
+/*****************************************/
+
+/**************顶部导航条************/
+header {
+	background:#333;
+	height:43px;
+	border-bottom:2px solid #606060;
+}
+#header_main {
+	position:absolute;
+	width:100%;
+}
+#header_main a {
+	color:#fff;
+}
+#top_header {
+	width:960px;
+	margin:0 auto;
+}
+#top_header:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+
+/********通用样式**********/
+/*按钮下拉小三角*/
+.top_nav_select{
+	position:relative;
+	border-color: #c2c2c2 transparent transparent;
+	border-width:4px 4px 0;
+	border-style:solid dashed dashed;
+	right:10px;
+}
+
+
+/**********左侧导航条**********/
+#top_header #left_header {
+	position:relative;
+}
+#left_header>a {
+	display:inline-block;
+	height:43px;
+	padding:0 15px;
+	line-height:43px;
+	color:#fff;
+}
+#left_header>a>b {
+	right:-5px;
+	top:10px;
+}
+#left_header>a:hover {
+	cursor:pointer;
+}
+#left_header>a:nth-child(1) {
+}
+#left_header>a:nth-child(1):hover {
+	background:#1e1e1e;
+}
+
+#left_header>a:nth-child(2) {
+	margin-left:20px;
+}
+/*********应用下拉菜单*********/
+#left_header .top_header_menu {
+	position:absolute;
+	top:45px;
+	display:none;
+}
+#left_header .top_header_menu ul {
+	border:1px solid #cdcdcd;
+	padding:5px 0;
+}
+.top_header_menu li {
+	width:115px;
+	height:31px;
+	padding:0 10px; 
+}
+.top_header_menu li:hover {
+	background:#f2f2f2;
+}
+#left_header .top_header_menu li a {
+	display:block;
+	border-bottom:1px dashed #ddd;
+	color:#666;
+	height:30px;
+	line-height:30px;
+	background:url(images/header_sprite_v37.png) no-repeat;
+	padding-left:30px;
+}
+#left_header .top_header_menu li:first-child a {
+	background-position:0 -157px;
+}
+#left_header .top_header_menu li:nth-child(2) a {
+	background-position:0 -367px;
+}
+#left_header .top_header_menu li:nth-child(3) a {
+	background-position:0 -277px;
+}
+#left_header .top_header_menu li:nth-child(4) a {
+	background-position:0 -246px;
+}
+#left_header .top_header_menu li:nth-child(5) a {
+	background-position:0 -216px;
+}
+#left_header .top_header_menu li:nth-child(6) a {
+	background-position:0 -186px;
+}
+#left_header .top_header_menu li:nth-child(7) a {
+	background-position:0 -306px;
+}
+#left_header .top_header_menu li:nth-child(8) a {
+	background-position:0 -336px;
+}
+#left_header .top_header_menu li:nth-child(9) a {
+	background-position:0 -414px;
+}
+#left_header .top_header_menu li:nth-child(10) a {
+	background-position:0 -445px;
+}
+#left_header .top_header_menu li:nth-child(11) a {
+	background-position:0 -590px;
+}
+#left_header .top_header_menu li:last-child a {
+	background-position:0 -630px;
+}
+
+
+
+
+
+
+
+
+/**********右侧导航条**********/
+#right_header {
+	width:750px;
+	
+}
+#right_header:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+#right_header p {
+	line-height:48px;
+	height:45px;
+	border-bottom:3px solid #8f2f2f;
+	width:60px;
+	text-align:center;
+	background-image:linear-gradient(to bottom,#e01414,#ce1111 50%,#bb0e0e 100%);
+	color:#fff;
+}
+
+#right_header ul {
+	
+}
+#right_header ul:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+#right_header>ul li {
+	float:left;
+	padding-right:10px;
+	border-left:1px solid #3f3f3f;
+	border-right:1px solid #1f1f1f;
+	color:#fff;
+}
+#right_header ul li b {
+	display:block;
+}
+#right_header .register_email {
+	position:relative;
+	margin-left:10px;
+}
+#right_header .register_email:before {
+	content:'';
+	display: table;
+}
+#right_header .register_email>a {
+	display:inline-block;
+	color:#fff;
+	width:72px;
+	height:43px;
+	line-height:43px;
+	border-right:1px solid #3f3f3f;
+}
+#right_header .register_email>a>b {
+	top:-33px;
+	right:-79px;
+}
+#right_header .register_email ul {
+	position:absolute;
+	top:46px;
+	width:210px;
+	padding:5px 0;
+	border:1px solid #ddd;
+	box-shadow:0 0 10px #ddd;
+	display:none;
+}
+#right_header .register_email ul li {
+	height:30px;
+	padding:0 10px;
+	
+}
+#right_header .register_email ul li:hover {
+	background:#ddd;
+	font-weight:bold;
+	color:#000;
+}
+#right_header .register_email ul li a {
+	text-align:center;
+	color:#666;
+	display:block;
+	line-height:30px;
+	height:30px;
+	border-bottom:1px dashed #ddd;
+}
+#right_header .register_email ul li:nth-child(2) a {
+	border-bottom:none;
+}

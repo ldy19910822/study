@@ -1,0 +1,340 @@
+h1,h2,h3,h4,h5,h6,ul,li,dl,dd,dt,p,body {
+	margin:0;
+	padding:0;
+}
+.clear {
+	clear:both;
+}
+.lf {
+	float:left;
+}
+.rt {
+	float:right;
+} 
+.over {
+	overflow:hidden;
+}
+header,section,footer {
+	width:100%;
+}
+body {
+	font-size:12px;
+	font-family:Arial SimSun;
+}
+a {
+	text-decoration:none;
+}
+ul {
+	list-style:none;
+}
+/*****************************************/
+
+/**************顶部导航条************/
+header {
+	background:#333;
+	height:43px;
+	border-bottom:2px solid #606060;
+}
+#header_main {
+	position:fixed;
+	z-index:9999;
+	height:43px;
+	width:100%;
+}
+#header_main a {
+	color:#fff;
+}
+#top_header {
+	width:960px;
+	margin:0 auto;
+}
+#top_header:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+
+/********通用样式**********/
+/*按钮下拉小三角*/
+.top_nav_select{
+	position:relative;
+	border-color: #c2c2c2 transparent transparent;
+	border-width:4px 4px 0;
+	border-style:solid dashed dashed;
+	right:10px;
+}
+
+
+/**********左侧导航条**********/
+#top_header #left_header {
+	position:relative;
+}
+#left_header div.nets_appli {
+	display:inline-block;
+}
+#left_header .nav-select-appli {
+
+}
+#left_header .nets_appli>a,#left_header>a {
+	display:inline-block;
+	height:43px;
+	padding:0 15px;
+	line-height:43px;
+	color:#fff;
+}
+#left_header .nets_appli>a>b {
+	right:-5px;
+	top:10px;
+}
+#left_header .nets_appli>a:hover {
+	cursor:pointer;
+}
+#left_header .nets_appli>a:nth-child(1) {
+}
+#left_header .nets_appli>a:nth-child(1):hover {
+	background:#1e1e1e;
+}
+
+#left_header>a:nth-child(1) {
+	margin-left:20px;
+}
+/*********应用下拉菜单*********/
+.top_header_menu {
+	position:absolute;
+	padding-top:10px;
+	left:-10px;
+	z-index: 10;
+	/*display:none;/****************/
+}
+.nav-select-list {
+	border:1px solid #ddd;
+	box-shadow: 0px 0px 10px #ddd;
+	padding:5px 0;
+}
+.top_header_menu li {
+	padding:0 10px; 
+}
+
+.top_header_menu li:hover {
+	background:#f2f2f2;
+}
+#header_main .top_header_menu li a {
+	display:block;
+	border-bottom:1px dashed #ddd;
+	color:#666;
+	height:30px;
+	line-height:30px;
+	
+}
+#left_header .top_header_menu li {
+	
+}
+#left_header .top_header_menu li a {
+	background:url(images/nav_sprite_v37.png) no-repeat;
+	width:100px;
+	padding-left:30px;	
+}
+#left_header .top_header_menu li:first-child a {
+	background-position:0 -157px;
+}
+#left_header .top_header_menu li:nth-child(2) a {
+	background-position:0 -367px;
+}
+#left_header .top_header_menu li:nth-child(3) a {
+	background-position:0 -277px;
+}
+#left_header .top_header_menu li:nth-child(4) a {
+	background-position:0 -246px;
+}
+#left_header .top_header_menu li:nth-child(5) a {
+	background-position:0 -216px;
+}
+#left_header .top_header_menu li:nth-child(6) a {
+	background-position:0 -186px;
+}
+#left_header .top_header_menu li:nth-child(7) a {
+	background-position:0 -306px;
+}
+#left_header .top_header_menu li:nth-child(8) a {
+	background-position:0 -336px;
+}
+#left_header .top_header_menu li:nth-child(9) a {
+	background-position:0 -414px;
+}
+#left_header .top_header_menu li:nth-child(10) a {
+	background-position:0 -445px;
+}
+#left_header .top_header_menu li:nth-child(11) a {
+	background-position:0 -590px;
+}
+#left_header .top_header_menu li:last-child a {
+	background-position:0 -630px;
+}
+
+
+
+
+
+
+
+
+/**********右侧导航条**********/
+#right_header {
+
+}
+#right_header:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+#right_header p {
+	line-height:48px;
+	height:44px;
+	border-bottom:3px solid #8f2f2f;
+	width:60px;
+	text-align:center;
+	background-image:linear-gradient(to bottom,#e01414,#ce1111 50%,#bb0e0e 100%);
+	color:#fff;
+}
+#right_header #right_header:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+#right_header ul {
+	float:left;
+}
+#right_header ul:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+#right_header>ul>li {
+	float:left;
+	cursor:pointer;
+	position: relative;
+}
+#right_header ul li b {
+	display:block;
+}
+#right_header .register_email {
+	position:relative;
+	padding:0 25px 0 15px;
+	height:43px;
+}
+#right_header .register_email:before {
+	content:'';
+	display: table;
+}
+#right_header .register_email>a {
+	display:inline-block;
+	color:#fff;
+	width:72px;
+	height:43px;
+	line-height:43px;
+}
+#right_header .register_email>a>b {
+	top:-33px;
+	right:-79px;
+}
+#right_header #register_mail {
+	display:none;
+	position: absolute;
+	padding-top:10px;
+	top:40px;
+}
+#right_header .register_email ul {
+	width:210px;
+	padding:5px 0;
+	border:1px solid #ddd;
+	box-shadow:0 0 10px #ddd;
+}
+#right_header .register_email ul li {
+	height:30px;
+	padding:0 10px;
+	
+}
+#right_header .register_email ul li:hover {
+	background:#ddd;
+	font-weight:bold;
+	color:#000;
+}
+#right_header .register_email ul li a {
+	text-align:center;
+	color:#666;
+	display:block;
+	line-height:30px;
+	height:30px;
+	border-bottom:1px dashed #ddd;
+}
+#right_header .register_email ul li:nth-child(2) a {
+	border-bottom:none;
+}
+
+#right_header>ul>li>.top_header_box>a {
+	padding:1px 14px 0 3px;
+	position: relative;
+	border-left:1px solid #3f3f3f;
+	border-right:1px solid #1f1f1f;
+	height:42px;
+	cursor:pointer;
+	float: left;
+}
+#right_header>ul>li>.top_header_box>a {
+	background:url(images/nav_sprite_v37.png) no-repeat;
+	margin:10px 0;
+	display:block;
+	height:23px;
+	width:25px;
+}
+#right_header ul>li a.kaola {
+	background-position: 0 -394px;
+	width:56px;
+}
+#right_header ul>li a.mail {
+	background-position: 0 -23px;
+}
+#right_header ul>li a.pay {
+	background-position: 0 -46px;
+}
+#right_header ul>li a.dianshang {
+	background-position: 0 -504px;
+}
+#right_header ul>li a.huati {
+	background-position: 0 -92px;
+}
+#right_header ul>li a.lofter {
+	background-position: 0 -477px;
+}
+#right_header ul>li a.bobo {
+	background-position: 0 -114px;
+	width:50px;
+}
+#right_header ul>li a.mobile {
+	background-position: 0 -542px;
+}
+#right_header ul>li>.top_header_box>a>b {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+}
+#right_header ul>li>.top_header_box>a.title_mobile {
+	padding:1px 11px 0 11px;
+}
+
+.entry_bgblack:hover {
+	background-color: #1e1e1e;
+}
+/**********右侧导航下拉选择框样式**********/
+li.top_header_kaola .nav-select-list li a {
+	width:115px;
+}
+#header_main li .top_header_menu .nav-select-list li a:hover {
+	font-weight:bold;
+	color:#111;
+}
+
+/******顶部导航条隐藏******/
+.nav-select-appli,.nav-select-kaola,.nav-select-mail,.nav-select-pay,.nav-select-dianshang,.nav-select-huati,.nav-select-lofter,.nav-select-bobo {
+	display:none;
+}
