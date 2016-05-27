@@ -1,3 +1,4 @@
+* {box-sizing: border-box;}
 h1,h2,h3,h4,h5,h6,ul,li,dl,dd,dt,p,body {
 	margin:0;
 	padding:0;
@@ -111,6 +112,7 @@ header {
 	border:1px solid #ddd;
 	box-shadow: 0px 0px 10px #ddd;
 	padding:5px 0;
+	background-color: #fff;
 }
 .top_header_menu li {
 	padding:0 10px; 
@@ -189,7 +191,7 @@ header {
 	clear:both;
 }
 #right_header p {
-	line-height:48px;
+	line-height:40px;
 	height:44px;
 	border-bottom:3px solid #8f2f2f;
 	width:60px;
@@ -214,6 +216,8 @@ header {
 	float:left;
 	cursor:pointer;
 	position: relative;
+	border-left:1px solid #3f3f3f;
+	border-right:1px solid #1f1f1f;
 }
 #right_header ul li b {
 	display:block;
@@ -249,6 +253,7 @@ header {
 	padding:5px 0;
 	border:1px solid #ddd;
 	box-shadow:0 0 10px #ddd;
+	background-color: #fff;
 }
 #right_header .register_email ul li {
 	height:30px;
@@ -275,8 +280,7 @@ header {
 #right_header>ul>li>.top_header_box>a {
 	padding:1px 14px 0 3px;
 	position: relative;
-	border-left:1px solid #3f3f3f;
-	border-right:1px solid #1f1f1f;
+	
 	height:42px;
 	cursor:pointer;
 	float: left;
@@ -286,11 +290,11 @@ header {
 	margin:10px 0;
 	display:block;
 	height:23px;
-	width:25px;
+	width:45px;
 }
 #right_header ul>li a.kaola {
-	background-position: 0 -394px;
-	width:56px;
+	background-position: 5px -394px;
+	width:77px;
 }
 #right_header ul>li a.mail {
 	background-position: 0 -23px;
@@ -302,17 +306,17 @@ header {
 	background-position: 0 -504px;
 }
 #right_header ul>li a.huati {
-	background-position: 0 -92px;
+	background-position: 3px -92px;
 }
 #right_header ul>li a.lofter {
 	background-position: 0 -477px;
 }
 #right_header ul>li a.bobo {
-	background-position: 0 -114px;
-	width:50px;
+	background-position: 3px -114px;
+	width:70px;
 }
 #right_header ul>li a.mobile {
-	background-position: 0 -542px;
+	background-position: 4px -542px;
 }
 #right_header ul>li>.top_header_box>a>b {
 	position: absolute;
@@ -334,14 +338,75 @@ header {
 	font-weight:bold;
 	color:#111;
 }
-
+.top_header_box .qrcode-img {
+	display: none;
+	width:150px;
+	height:178px;
+	position:absolute;
+	top: 40px;
+	z-index: 10;
+	left: -105px;	
+	padding-top:15px;
+}
+.top_header_box .qrcode-img a {display: block;box-shadow: 0 0 8px #cdcdcd;}
 /******顶部导航条隐藏******/
 .nav-select-appli,.nav-select-kaola,.nav-select-mail,.nav-select-pay,.nav-select-dianshang,.nav-select-huati,.nav-select-lofter,.nav-select-bobo {
 	display:none;
 }
-
+/**鼠标悬停时背景色**/
+.bg {background-color: #1e1e1e;}
 /***************顶部导航条结束******************/
 
 
 /******************主体部分内容********************/
-section 
+section {margin-top:30px;}
+section .head,section .content {width:960px;margin:0 auto;border:1px solid #aaa;}
+section .head .logo>a {
+	display:block;
+	width:130px;
+	height:40px;
+}
+section .head .logo {border:1px solid #aaa;}/*********/
+section .head .logo:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+section .head .logo a.lf {
+	background:url(images/bg_sprites_v16.png) no-repeat;
+}
+section .head .logo a.rt {
+	background:url(images/wljd_all1229.jpg) no-repeat;
+}
+section .head .net_nav {
+	margin-top:20px;
+	border-top:4px solid #206F96;
+	height:94px;
+}
+section .head .net_nav:after {
+	content:'';
+	display: block;
+	clear:both;
+}
+section .head .net_nav ul {
+	/*border:1px solid #aaa;*/
+	float:left;
+	margin-right:18px;
+	border-right:1px dashed #dcdddd;
+	padding-right:18px;
+}
+section .head .net_nav ul.nav-w173 {
+	width:163px;
+}
+section .head .net_nav ul.nav-w150 {
+	width:150px;
+}
+section .head .net_nav ul.nav-w140 {
+	width:140px;
+}
+section .head .net_nav ul.nav-w110 {
+	width:110px;
+	margin-right: 0;
+	padding-right: 0;
+}
+

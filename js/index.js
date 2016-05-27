@@ -41,19 +41,23 @@ function(){
 	}
 */
 var lis = document.querySelectorAll('#right_header>ul>li');
-console.log(lis);
 for(var i=0;i<lis.length;i++){
 	//console.log(lis[key]);
 	var li=lis[i];
 	li.addEventListener('mouseover',function(){
 		var cn=this.className.slice(11);
-		console.log(cn);
 		$('.nav-select-'+cn).show();
+		this.style.backgroundColor='#1e1e1e';
 	},true);
 	li.addEventListener('mouseout',function(){
 		var cn=this.className.slice(11);
-		console.log(cn);
 		$('.nav-select-'+cn).hide();
+		this.style.backgroundColor='';
 	},true)
 }
+var moblie = document.querySelector('#right_header>ul>li:last-child'),
+	moblieImg = document.querySelector('.top_header_box .qrcode-img');
+$(moblie).hover(function(){$(moblieImg).show()},function(){$(moblieImg).hide()});
+
+
 
