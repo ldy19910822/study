@@ -7,6 +7,13 @@ a {color:#252525;}
 .clear {
 	clear:both;
 }
+em {
+	font-weight: normal;
+	font-style: normal;
+}
+em.bold {
+	font-weight:600;
+}
 .lf {
 	float:left;
 }
@@ -27,6 +34,10 @@ a {
 }
 ul {
 	list-style:none;
+}
+section ul a:hover {
+	color:#ba2636;
+	text-decoration: underline;
 }
 .db {display: block;}
 .dn {display: none;}
@@ -136,7 +147,7 @@ header {
 	
 }
 #left_header .top_header_menu li a {
-	background:url(images/nav_sprite_v37.png) no-repeat;
+	background:url(../img/nav_sprite_v37.png) no-repeat;
 	width:100px;
 	padding-left:30px;	
 }
@@ -289,7 +300,7 @@ header {
 	float: left;
 }
 #right_header>ul>li>.top_header_box>a {
-	background:url(images/nav_sprite_v37.png) no-repeat;
+	background:url(../img/nav_sprite_v37.png) no-repeat;
 	margin:10px 0;
 	display:block;
 	height:23px;
@@ -376,10 +387,10 @@ section .head .logo:after {
 	clear:both;
 }
 section .head .logo a.lf {
-	background:url(images/bg_sprites_v16.png) no-repeat;
+	background:url(../img/bg_sprites_v16.png) no-repeat;
 }
 section .head .logo a.rt {
-	background:url(images/wljd_all1229.jpg) no-repeat;
+	background:url(../img/wljd_all1229.jpg) no-repeat;
 }
 section .head .net_nav {
 	margin-top:20px;
@@ -452,26 +463,31 @@ div.area_sub, div.area_main {
 	width:310px;
 	margin-right:20px;
 }
-#sliber {width:310px;height:265px;}
-.tab_main {border-top:2px solid #206F96;}
-.tab_hd {
-	height:30px;
-	line-height: 30px;
-	border-left:1px solid #cfcfcf;
+#sliber {
+	width:310px;
+	height:265px;
+	overflow: hidden;
 }
-.tab_hd li {
-	width:154px;
-	float:left;
-	border-bottom:1px solid #aaa;
+/****** tab标签页 *******/
+.tab-bd-con {
+	padding: 18px 10px 0 0;
 }
-.tab_hd li a {
-	text-align: center;
+/** tab页主内容 **/
+.list li {
+	font-size:13.5px;
+	background-image:url(../img/icon_v9.png);
+	background-repeat: no-repeat;
+	background-position: left -124px;
+	color:#c1c1c1;
+	overflow: hidden;
+	white-space: nowrap;
 }
-.tab_bd {position: relative;}
-.tab_bd>div {
-	position: absolute;
-	border: 1px solid #aaa;
+.list-main li {
+	padding-left:9px;
+	height:27px;
+	line-height:27px;
 }
+
 
 
 
