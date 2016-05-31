@@ -3,6 +3,7 @@ h1,h2,h3,h4,h5,h6,ul,li,dl,dd,dt,p,body {
 	margin:0;
 	padding:0;
 }
+a {color:#252525;}
 .clear {
 	clear:both;
 }
@@ -19,8 +20,7 @@ header,section,footer {
 	width:100%;
 }
 body {
-	font-size:12px;
-	font-family:Arial SimSun;
+	font:12px/1.5 Arial SimSun;
 }
 a {
 	text-decoration:none;
@@ -28,6 +28,8 @@ a {
 ul {
 	list-style:none;
 }
+.db {display: block;}
+.dn {display: none;}
 /*****************************************/
 
 /**************顶部导航条************/
@@ -35,10 +37,11 @@ header {
 	background:#333;
 	height:43px;
 	border-bottom:2px solid #606060;
-}
-#header_main {
 	position:fixed;
 	z-index:9999;
+	top:0px;
+}
+#header_main {	
 	height:43px;
 	width:100%;
 }
@@ -359,8 +362,8 @@ header {
 
 
 /******************主体部分内容********************/
-section {margin-top:30px;}
-section .head,section .content {width:960px;margin:0 auto;border:1px solid #aaa;}
+section {margin-top:80px;}
+section .head,section .content {width:960px;margin:0 auto;}
 section .head .logo>a {
 	display:block;
 	width:130px;
@@ -391,9 +394,9 @@ section .head .net_nav:after {
 section .head .net_nav ul {
 	/*border:1px solid #aaa;*/
 	float:left;
-	margin-right:18px;
+	margin:10px 18px 0 0;
 	border-right:1px dashed #dcdddd;
-	padding-right:18px;
+	padding-right:17px;
 }
 section .head .net_nav ul.nav-w173 {
 	width:163px;
@@ -404,9 +407,71 @@ section .head .net_nav ul.nav-w150 {
 section .head .net_nav ul.nav-w140 {
 	width:140px;
 }
-section .head .net_nav ul.nav-w110 {
-	width:110px;
+section .head .net_nav ul.nav-w125 {
+	width:125px;	
+}
+section .head .net_nav ul.nav-w125.last {
 	margin-right: 0;
 	padding-right: 0;
+	border:none;
 }
+section .head .net_nav ul li {overflow: hidden;}
+section .head .net_nav ul li a {
+	color:#252525;
+	text-decoration: none;
+	float:left;
+	width:25px;
+	margin-left:15px;
+	line-height:22px;
+	white-space: nowrap;
+}
+section .head .net_nav ul li a:hover {
+	color:#ba2636;
+	text-decoration: underline;
+}
+section .head .net_nav ul li a.leader {
+	font-weight: bold;
+	margin-left:0;
+}
+
+/********** 主体部分导航结束 **********/
+
+/************ 主体部分主内容 ************/
+.area {margin-bottom:12px;}
+#area_tab1 div.area_main {
+	width:660px;
+}
+#area_tab1 div.area_sub {
+	width:300px;
+}
+div.area_sub, div.area_main {
+	float:left;
+	border:1px solid #aaa;
+}
+#area_tab1 div.area_main div.main_con {
+	width:310px;
+	margin-right:20px;
+}
+#sliber {width:310px;height:265px;}
+.tab_main {border-top:2px solid #206F96;}
+.tab_hd {
+	height:30px;
+	line-height: 30px;
+	border-left:1px solid #cfcfcf;
+}
+.tab_hd li {
+	width:154px;
+	float:left;
+	border-bottom:1px solid #aaa;
+}
+.tab_hd li a {
+	text-align: center;
+}
+.tab_bd {position: relative;}
+.tab_bd>div {
+	position: absolute;
+	border: 1px solid #aaa;
+}
+
+
 
