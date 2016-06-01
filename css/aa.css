@@ -27,7 +27,7 @@ header,section,footer {
 	width:100%;
 }
 body {
-	font:12px/1.5 Arial SimSun;
+	font:12px/1.5 '宋体',Arial,SimSun;
 }
 a {
 	text-decoration:none;
@@ -451,17 +451,18 @@ section .head .net_nav ul li a.leader {
 .area {margin-bottom:12px;}
 #area_tab1 div.area_main {
 	width:660px;
+    height:1345px;
 }
 #area_tab1 div.area_sub {
 	width:300px;
 }
 div.area_sub, div.area_main {
 	float:left;
-	border:1px solid #aaa;
 }
 #area_tab1 div.area_main div.main_con {
 	width:310px;
 	margin-right:20px;
+    float:left;
 }
 #sliber {
 	width:310px;
@@ -472,9 +473,49 @@ div.area_sub, div.area_main {
 .tab-bd-con {
 	padding: 18px 10px 0 0;
 }
+.nav-tabs {
+    border-top:2px solid #206F96;
+    margin-top:5px;
+}
+.nav-tabs>li {
+    border-right:1px solid #ddd;
+    /*border-top:none;*/
+}
+.nav-tabs>li:first-child {
+    border:1px solid #ddd;
+    border-top:none;
+    border-bottom:none;
+}
+.nav-tabs > li.active > a {
+    border:none;
+}
+.tabs-2 li {
+    width:50%;
+}
+.tabs-3 li {
+    width:33.3%;
+}
+.tabs-3 li:last-child a {
+    box-sizing: content-box;
+    padding-right:1px;
+}
+.nav-tabs>li a {
+    border-radius: 0;
+    font-weight:bold;
+    width:100%;
+    height:28px;
+    line-height:28px;
+    float:left;
+    padding:0px;
+    border:none;
+}
+
+.nav-tabs li.active a {
+    border-top-color:transparent;
+}
 /** tab页主内容 **/
 .list li {
-	font-size:13.5px;
+	font-size:14px;
 	background-image:url(../img/icon_v9.png);
 	background-repeat: no-repeat;
 	background-position: left -124px;
@@ -482,10 +523,16 @@ div.area_sub, div.area_main {
 	overflow: hidden;
 	white-space: nowrap;
 }
+.top {
+	margin-bottom:12px;
+}
 .list-main li {
 	padding-left:9px;
 	height:27px;
 	line-height:27px;
+}
+.list li em.pad {
+	padding:2px 0 2px 20px;
 }
 
 
