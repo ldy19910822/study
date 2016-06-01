@@ -464,6 +464,69 @@ div.area_sub, div.area_main {
 	margin-right:20px;
     float:left;
 }
+/******** 图片轮播 *******/
+.slide {
+	position: relative;
+	width: 310px;
+	height: 220px;
+	overflow: hidden;
+}
+ul.slide-items {
+	position: absolute;
+	width: 310px;
+	height: 220px;
+	top: 0;
+	left: 0;
+}
+ul.slide-items li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 310px;
+	height: 220px;
+	display: none;
+	overflow: hidden;
+}
+ul.slide-control {
+	width: 310px;
+	height: 10px;
+	margin-top: 20px;
+}
+ul.slide-control li {
+	list-style-type: none;
+	float: left;
+	width: 30px;
+	height: 5px;
+	margin: 0 3px;
+	background-color: rgb(228, 228, 228);
+}
+ul.slide-control li.active {
+	background-color: rgb(118, 134, 138);
+}
+ul.slide-control li.active p {
+	height: 5px;
+	width: 0;
+	background-color: rgb(61, 70, 64);
+}
+.slide dl.option {
+	position: absolute;
+	width: 100%;
+}
+.slide dl.option dt,
+.slide dl.option dd {
+	font-size: 36px;
+	margin-top: 23%;
+}
+.slide dl.option a {
+	text-decoration: none;
+	color: #ddd;
+}
+.slide dl.option dt {
+	float: left;
+}
+.slide dl.option dd {
+	float: right;
+}
 #sliber {
 	width:310px;
 	height:265px;
@@ -482,9 +545,7 @@ div.area_sub, div.area_main {
     /*border-top:none;*/
 }
 .nav-tabs>li:first-child {
-    border:1px solid #ddd;
-    border-top:none;
-    border-bottom:none;
+    border-left:1px solid #ddd;
 }
 .nav-tabs > li.active > a {
     border:none;
@@ -492,12 +553,19 @@ div.area_sub, div.area_main {
 .tabs-2 li {
     width:50%;
 }
+.tabs-3 {border-right:1px solid #ddd;}
 .tabs-3 li {
     width:33.3%;
+}
+.tabs-3 li:last-child {
+	border-right-width:0px;
 }
 .tabs-3 li:last-child a {
     box-sizing: content-box;
     padding-right:1px;
+}
+.main_con .tabs-3 li.active a,.main_con .tabs-3 li.active a:hover {
+	border:0px solid #ddd;
 }
 .nav-tabs>li a {
     border-radius: 0;
