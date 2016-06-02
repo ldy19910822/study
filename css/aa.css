@@ -7,6 +7,9 @@ a {color:#252525;}
 .clear {
 	clear:both;
 }
+img {
+	vertical-align: top;
+}
 em {
 	font-weight: normal;
 	font-style: normal;
@@ -263,7 +266,7 @@ header {
 	top:40px;
 }
 #right_header .register_email ul {
-	width:210px;
+	width:230px;
 	padding:5px 0;
 	border:1px solid #ddd;
 	box-shadow:0 0 10px #ddd;
@@ -380,7 +383,6 @@ section .head .logo>a {
 	width:130px;
 	height:40px;
 }
-section .head .logo {border:1px solid #aaa;}/*********/
 section .head .logo:after {
 	content:'';
 	display:block;
@@ -602,7 +604,36 @@ ul.slide-control li.active p {
 .list li em.pad {
 	padding:2px 0 2px 20px;
 }
-
+.attr {
+	font-size:14px;
+}
+.attr:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+.attr .attr-news {
+	background:url(../img/bg_sprites_v16.png) no-repeat left -70px;
+	width:90px;
+	height:20px;
+	margin-right:10px;
+}
+/****** 图片文字链接 ******/
+.img-p {
+	margin-left:-40px;
+}
+.img-p li {
+	float:left;
+	margin-left:40px;
+	margin-bottom:4px;
+}
+.img-p li p {
+	height:25px;
+	line-height:25px;
+}
+.img-p li img {
+	margin-bottom:3px;
+}
 
 
 
