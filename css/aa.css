@@ -38,12 +38,19 @@ a {
 ul {
 	list-style:none;
 }
-section ul a:hover {
+section a:hover {
 	color:#ba2636;
 	text-decoration: underline;
 }
 .db {display: block;}
 .dn {display: none;}
+.list li,.tab-ft .entry , .product-list li span a{
+	background-image:url(../img/icon_v9.png);
+	background-repeat: no-repeat;
+}
+#left_header .top_header_menu li a , #right_header>ul>li>.top_header_box>a {
+	background:url(../img/nav_sprite_v37.png) no-repeat;
+}
 /*****************************************/
 
 /**************顶部导航条************/
@@ -150,7 +157,6 @@ header {
 	
 }
 #left_header .top_header_menu li a {
-	background:url(../img/nav_sprite_v37.png) no-repeat;
 	width:100px;
 	padding-left:30px;	
 }
@@ -303,7 +309,6 @@ header {
 	float: left;
 }
 #right_header>ul>li>.top_header_box>a {
-	background:url(../img/nav_sprite_v37.png) no-repeat;
 	margin:10px 0;
 	display:block;
 	height:23px;
@@ -586,8 +591,6 @@ ul.slide-control li.active p {
 /** tab页主内容 **/
 .list li {
 	font-size:14px;
-	background-image:url(../img/icon_v9.png);
-	background-repeat: no-repeat;
 	background-position: left -124px;
 	color:#c1c1c1;
 	overflow: hidden;
@@ -613,7 +616,9 @@ ul.slide-control li.active p {
 	clear:both;
 }
 .attr .attr-news {
-	background:url(../img/bg_sprites_v16.png) no-repeat left -70px;
+	background-image:url(../img/bg_sprites_v16.png);
+	background-repeat:no-repeat;
+	background-position:left -70px;
 	width:90px;
 	height:20px;
 	margin-right:10px;
@@ -634,6 +639,137 @@ ul.slide-control li.active p {
 .img-p li img {
 	margin-bottom:3px;
 }
+.border-bottom-dotted {
+	border-bottom:1px dotted #ddd;
+}
+/******  '进入'小导航 *****/
+.tab-ft {
+	margin-top:8px;
+	line-height:20px;
+	text-align: right;
+}
+.tab-ft .entry {
+	padding:2px 22px 2px 0;
+	background-position: right -89px;
+}
+/******* 第一屏右侧 *******/
 
+/*** 产品列表 ***/
+.area_sub .nav-product {
+	border:1px solid #ddd;
+	border-top:none;
 
+}
+.nav-product .tab-hd {
+	padding-left:15px;
+}
+.nav-product .tab-hd:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+.nav-product .tab-hd h4{
+	float:left;
+	margin:0;
+	padding:0;
+	text-align:center;
+	font-size:16px;
+	font-weight: bold;
+	line-height:27px;
+}
+.nav-product .tab-hd div {
+	float:right;
+}
+.nav-product .product-list {
 
+}
+.nav-product .product-list li {
+	background-color: #fff;
+	position:relative;
+	padding:13px 0 13px 50px;
+	line-height:25px;
+}
+.nav-product .product-list li.even {
+	background-color: #f7f7f7;
+}
+.nav-product .product-list li span {
+	position: absolute;
+	left:0;
+	top:50%;
+	margin-top:-20px;
+}
+
+.product-list li span a {
+	float:left;
+	width:40px;
+	height:40px;
+}
+.product-list li span a {
+	padding-right: 3px;
+}
+.product-list li > a {
+	white-space: nowrap;
+}
+.product-list li.p-mail span a {
+	background-position: 12px -167px;
+}
+.product-list li.p-game span a {
+	background-position: 7px -217px;
+}
+.product-list li.p-shequ span a {
+	background-position: 12px -262px;
+}
+.product-list li.p-recom span a {
+	background-position: 12px -308px;
+}
+
+/*********** 公益传媒 ***********/
+div.gongyi {
+	margin-top:10px;
+	border:1px solid #ddd;
+	padding:10px 0 10px 10px;
+}
+div.gongyi ul>div {
+	font-size:14px;
+	padding-left:10px;
+	line-height:27px;
+}
+div.gongyi ul>div>a {
+	padding:2px 0 2px 25px;
+	background:url(../img/newsapp_logo.png) left top no-repeat; 
+	margin-left:10px;
+}
+/******** 右侧返回顶部 ******/
+.side-bar {
+	position:fixed;
+	bottom:0px;
+	right:200px;
+}
+.side-bar .qrcode {	
+	margin-bottom:8px;
+}
+.side-bar .qrcode:after , .side-bar .back:after , .side-bar .back a {
+	content:'';
+	display: block;
+	clear: both;
+}
+.side-bar .qrcode span {
+	width:60px;
+	height:76px;
+	background-position: 0 -43px;
+}
+.side-bar .back {
+	background-color: #e9e9e9;
+}
+.side-bar .back a {
+	width:60px;
+	height:60px;
+}
+.side-bar .back span {
+	width:46px;
+	height:25px;
+	margin:15px 0 0 7px;
+}
+.side-bar .qrcode span , .side-bar .back span {
+	background-image:url(../img/sprite_dw2.png);
+}

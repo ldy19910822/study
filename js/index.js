@@ -59,6 +59,20 @@ var moblie = document.querySelector('#right_header>ul>li:last-child'),
 	moblieImg = document.querySelector('.top_header_box .qrcode-img');
 $(moblie).hover(function(){$(moblieImg).show()},function(){$(moblieImg).hide()});
 
-
-
+window.onscroll = function(){
+	
+	console.log(getTop(side_bar)); 
+}
+function getTop(elem){
+	var sum = elem.offsetTop;
+	while(elem.offsetParent!==null){
+		elem = elem.offsetParent;
+		sum+=elem.offsetTop;
+		//debugger;
+	}
+	return sum;
+}
+document.body.onmousemove = function(e){
+	//console.log(e.pageY);
+}
 
