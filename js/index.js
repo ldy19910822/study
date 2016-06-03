@@ -60,19 +60,21 @@ var moblie = document.querySelector('#right_header>ul>li:last-child'),
 $(moblie).hover(function(){$(moblieImg).show()},function(){$(moblieImg).hide()});
 
 window.onscroll = function(){
-	
-	console.log(getTop(side_bar)); 
-}
-function getTop(elem){
-	var sum = elem.offsetTop;
-	while(elem.offsetParent!==null){
-		elem = elem.offsetParent;
-		sum+=elem.offsetTop;
-		//debugger;
+	var scrollTop = document.body.scrollTop||document.documentElement.scrollTop;
+	if(scrollTop>=300){
+		side_bar.style.display = 'block';
+	}else {
+		side_bar.style.display = 'none';
 	}
-	return sum;
 }
-document.body.onmousemove = function(e){
-	//console.log(e.pageY);
-}
+/* 当滚动条高度<... 时 固定定位在屏幕底部，display:none
+   单击时toggle 显示/隐藏
+   按钮箭头改变
+   当滚动条高度>...时显示在默认位置，display:block
+*/
+/* 底部导航单击事件 */
+$('.nav-top-button').click(function(){
+
+})
+
 

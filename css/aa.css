@@ -38,7 +38,7 @@ a {
 ul {
 	list-style:none;
 }
-section a:hover {
+section a:hover ,.subfoot ul a:hover {
 	color:#ba2636;
 	text-decoration: underline;
 }
@@ -50,6 +50,10 @@ section a:hover {
 }
 #left_header .top_header_menu li a , #right_header>ul>li>.top_header_box>a {
 	background:url(../img/nav_sprite_v37.png) no-repeat;
+}
+.attr .attr-news , .nav-box .nav-bottom-logo , section .head .logo a.lf {
+	background-image:url(../img/bg_sprites_v16.png);
+	background-repeat:no-repeat;
 }
 /*****************************************/
 
@@ -382,6 +386,11 @@ header {
 
 /******************主体部分内容********************/
 section {margin-top:80px;}
+.content:after {
+	display:block;
+	content:'';
+	clear:both;
+}
 section .head,section .content {width:960px;margin:0 auto;}
 section .head .logo>a {
 	display:block;
@@ -394,7 +403,7 @@ section .head .logo:after {
 	clear:both;
 }
 section .head .logo a.lf {
-	background:url(../img/bg_sprites_v16.png) no-repeat;
+	/*background:url(../img/bg_sprites_v16.png) no-repeat;*/
 }
 section .head .logo a.rt {
 	background:url(../img/wljd_all1229.jpg) no-repeat;
@@ -616,8 +625,6 @@ ul.slide-control li.active p {
 	clear:both;
 }
 .attr .attr-news {
-	background-image:url(../img/bg_sprites_v16.png);
-	background-repeat:no-repeat;
 	background-position:left -70px;
 	width:90px;
 	height:20px;
@@ -639,8 +646,9 @@ ul.slide-control li.active p {
 .img-p li img {
 	margin-bottom:3px;
 }
-.border-bottom-dotted {
-	border-bottom:1px dotted #ddd;
+.border-top-dotted {
+	border-top:1px dotted #ddd;
+	padding-top:10px;
 }
 /******  '进入'小导航 *****/
 .tab-ft {
@@ -650,7 +658,7 @@ ul.slide-control li.active p {
 }
 .tab-ft .entry {
 	padding:2px 22px 2px 0;
-	background-position: right -89px;
+	background-position: right -90px;
 }
 /******* 第一屏右侧 *******/
 
@@ -742,7 +750,7 @@ div.gongyi ul>div>a {
 /******** 右侧返回顶部 ******/
 .side-bar {
 	position:fixed;
-	bottom:0px;
+	bottom:200px;
 	right:200px;
 }
 .side-bar .qrcode {	
@@ -773,3 +781,151 @@ div.gongyi ul>div>a {
 .side-bar .qrcode span , .side-bar .back span {
 	background-image:url(../img/sprite_dw2.png);
 }
+
+
+/***************  底部导航  **************/
+.bt-bg {
+	
+	background-color:#f6f6f6;
+}
+.nav-bottom {
+	width:100%;
+	margin-top:80px;
+	border-top:1px solid #ddd;
+}
+.nav-bottom .nav-content {
+	width:960px;
+	margin:0 auto;
+	position:relative;
+	padding-top:28px;
+}
+.nav-bottom .nav-content:after {
+	content:'';
+	display: block;
+	clear:both;
+}
+/*** 顶部按钮 ***/
+.nav-bottom .nav-top-button {
+	border:1px solid #ddd;
+	width:100px;
+	height:32px;
+	cursor:pointer;
+	position:absolute;
+	right:0;
+	top:-32px;
+	line-height: 32px;
+	text-align: center;
+}
+.nav-top-button span.button {
+	position:relative;
+	width:20px;
+	height:20px;
+	border-radius: 50%;
+	margin:5px 5px 0 0;
+	border:1px solid #d2d2d2;
+	background-color:#fafafa;
+}
+span.button i.traig {
+	width:0;
+	height:0;
+	border:4px solid transparent;
+	border-bottom-color:#45454d;
+	position:relative;
+	top:-15px;
+}
+.nav-list-box {
+	margin-left:-12px;
+}
+.nav-box {
+	float:left;
+	margin-left:12px;
+	height:150px;
+	width:150px;
+	margin-bottom:12px;
+}
+.nav-box .nav-bottom-logo {
+	float:left;
+	background-position:left top;
+	width:128px;
+	height:71px;
+}
+ul.nav-list {
+	background-color:#e8e8e8;
+	line-height:25px;
+}
+ul.nav-list:hover {
+	background-color:#206f96;
+}
+ul.nav-list:hover a {
+	color:#fff;
+}
+ul.nav-list li.title {
+	font-weight: bold;
+	display: block;
+	float:none;
+	margin:6px 0 0 12px;
+}
+.nav-list li {
+	float:left;
+	width:52px;
+	margin-left:12px;
+	white-space: nowrap;
+}
+.tab-ft.map {
+	height:40px;
+	padding-right:10px;
+	line-height:30px;
+	border-bottom:1px solid #dedede;
+	clear:both;
+}
+/********* 主体内容结束 *********/
+
+/********     页脚     *********/
+.subfoot {
+	width:960px;
+	margin:0 auto;
+	border-top:1px solid #fff;
+	padding:36px 0 60px;
+	line-height:26px;
+}
+.subfoot:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+.subfoot ul {
+	float:left;
+	padding-right:50px;
+}
+.subfoot ul a , .noLink {
+	color:#666;
+}
+.police {
+	padding-left:25px;
+	background:url(../img/ghs.png) no-repeat;
+	display:block;
+}
+.foot-bottom {
+	width:100%;
+	background-color:#333;
+	height:39px;
+	line-height:39px;
+	color:#ddd;
+}
+.ntes_foot_link {
+	width:960px;
+	margin:0 auto;
+}
+.foot-bottom a.pad-rt {
+	padding:0 2px;
+	color:#ddd;
+}
+.foot-bottom span {
+	padding-right:3px;
+	font-family:Arial;
+}
+
+
+
+
+
