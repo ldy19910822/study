@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    * { padding:0; margin:0;} p {margin:0; height:5px;}
+    .slide { position:relative; width:310px; height:220px; overflow:hidden; }
+    ul.slide-items { position:absolute; width:310px; height:220px; top:0; left:0; }
+    ul.slide-items li { position:absolute; left:0; top:0; display:none;}/*******/
+    ul.slide-control { width:310px; height:5px; margin-top:20px; margin-left:46.5px;}
+    ul.slide-control li { list-style:none; float:left; width:25px; margin:0 3px; background-color:#7BBEDF;}
+    /*     */
+    ul.slide-control li.active p { height:5px; width:0; background-color:#206F96; }
+    .slide div.option { position:absolute; width:100%; height:100%; }
+    .slide div.option:before {content:''; display:table;}
+    .slide div.option a { font-size:20px; height:100%; width:20px;}
+    .slide div.option a:first-child { float:left; padding-left:20px;}
+    .slide div.option a:last-child { float:right; position:relative; left:-20px;}
+    .slide div.option a span { margin-top:100px; }
+  </style>
+</head>
+<body>
+  <div class="slide" id="slide">
+    <!-- 图片 -->
+    <ul class="slide-items">
+      <li>
+        <img src="img/slider/slider-1.jpg" alt="">
+      </li>
+      <li>
+        <img src="img/slider/slider-2.jpg" alt="">
+      </li>
+      <li>
+        <img src="img/slider/slider-3.jpg" alt="">
+      </li> 
+      <li>
+        <img src="img/slider/slider-4.jpg" alt="">
+      </li> 
+      <li>
+        <img src="img/slider/slider-5.jpg" alt="">
+      </li> 
+      <li>
+        <img src="img/slider/slider-6.jpg" alt="">
+      </li>
+      <li>
+        <img src="img/slider/slider-7.jpg" alt="">
+      </li>
+    </ul>
+    <!-- 方向箭头 -->
+    <div class="option">
+      <a href="javascript:;">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a href="javascript:;">
+        <span class='glyphicon glyphicon-chevron-right'></span>
+      </a>
+    </div>
+  </div>
+  <!-- 进度条 -->
+  <ul class='slide-control' id='progress'>
+    <li page-data='1' class="active"><p></p></li>
+    <li page-data='2'><p></p></li>
+    <li page-data='3'><p></p></li>
+    <li page-data='4'><p></p></li>
+    <li page-data='5'><p></p></li>
+    <li page-data='6'><p></p></li>
+    <li page-data='7'><p></p></li>
+  </ul>
+  <script>
+    window.onload = function(){
+      Object.prototype.extend = function(obj){
+        var me = this;
+        obj = obj || {};
+        Object.keys(me).forEach(function(val,idx){
+          obj[val] = obj[val] || me[val];
+        });
+        return obj;
+      }
+      FPSlide({
+        slideBox:'slide',
+        progress:'progress',
+        during:5,
+        switchSpeed:0.4
+      });
+      function FPSlide(option){
+        var condition = {
+          slideBox: 'slide',
+          progress: 'progress',
+          during: 5,
+          switchSpeed: 0.5
+        }
+        condition = condition.extend(option);
+        //console.log(condition);
+        var slideBox = document.getElementById('slide');
+        var slider = slideBox.children[0];  //ul
+        var slideContent = slider.children;  //li
+        var option = slider.nextElementSibling;
+        var prev = option.children[0];  //a
+        var next = option.children[1];  //a
+        var slideWidth = slideBox.offsetwidth;
+        var progress = document.getElementById('progress');
+        var progressBar = progress.children;  //进度条
+        var progressBarWidth = progressBar[0].offsetWidth*10;
+        var length = slideContent.length - 1;
+        var currentPage = 0;
+        var nextPage = 0;
+        var switchToken = null;
+        var progressToke = null;
+        var progressWaitToken = null;
+        var during = condition.during;
+        var switchSpeed = condition.switchSpeed;
+        var sliderLeft = 0;
+
+        function switchPage(current,next,direction){
+          currentPage = next;
+          direction = direction === 'r'?false:true;
+          slideContent[next].className = 'active';
+          slideContent[next].style = 'display:block;left:'+(direction?'310px':'-310px');
+          progressBar[current].className = '';
+          switchToken = setInterval(function(){
+            if (sliderLeft < slideWidth){
+              sliderLeft+=(slideWidth/100)/switchSpeed;
+              slider.style = 'width:620px; left:' + (direction ? '-' + sliderLeft + 'px;' : sliderLeft + 'px;');
+            }else {
+              sliderLeft = 0;
+              slider.style = 'left:0; width:310px;';
+              slideContent[current].style = '';
+              slideContent[current].className = '';
+              slideContent[next].style = 'display:block;';
+              clearInterval(switchToken);
+              switchToken = null;
+            }
+          },10);
+        }
+
+        function switchProgress(current,next){
+          var barWidth = 0;
+          //进度条
+          progressToken = setInterval(function(){
+            if (barWidth < (during - switchSpeed) * 100) {
+              barWidth++;
+              progressBar[next].className = 'active';
+              progressBar[next].children[0].style = 'width:' + barWidth / (during - switchSpeed) + '%';
+            }else {
+              progressBar[next].className = '';
+              progressBar[next].children[0].style = '';
+              barWidth = 0;
+              clearInterval(progressToken);
+              progressToken = null;
+            }
+          },10);
+        }
+
+        function switcher(current, next, direction, ifprogress) { //图片切换 num 要切换到的页
+          switchPage(current, next, direction);
+          switchProgress(current, next);
+        }
+        switcher(length, 0, '1');
+
+        function autoSwitch(){
+          waitToken = setInterval(function(){
+            if (switchToken === null && progressToken === null){
+              nextPage = currentPage === length ? 0 : currentPage + 1; 
+              switcher(currentPage, nextPage, '1');
+            }
+          }, during * 1000);
+        }
+        autoSwitch();
+
+        function pause(){
+          if(sliderLeft === 0){
+            clearInterval(waitToken);
+            waitToken = null;
+            clearInterval(progressToken);
+            progressToken = null;
+            clearInterval(switchToken);
+            switchToken = null;
+            clearInterval(progressWaitToken);
+            progressWaitToken = null;
+            sliderLeft = 0;
+            progressBar[currentPage].children[0].style = '';
+          }
+        }
+
+        function proceed(){
+          if(waitToken === null && sliderLeft === 0) {
+            autoSwitch();
+            switchProgress(currentPage, nextPage);
+          }
+        }
+
+        slider.addEventListener('mouseover',pause);
+        option.addEventListener('mouseover',pause);
+        progress.addEventListener('mouseover',pause);
+        slider.addEventListener('mouseout',proceed);
+        option.addEventListener('mouseout',proceed);
+        progress.addEventListener('mouseout',proceed);
+
+        prev.addEventListener('click',function(){
+          if (sliderLeft === 0) {
+            pause();
+            nextPage = currnetPage === 0 ? length : currentPage - 1;
+            switcher(currentPage, nextPage, 'r');
+            autoSwitch();
+          }
+        });
+
+        next.addEventListener('click',function(){
+          if (sliderLeft === 0) {
+            pause();
+            nextPage = currentPage === length ? 0 : currentPage + 1;
+            switcher(currentPage, nextPage, 'l');
+            autoSwitch();
+          }
+        });
+
+        progress.onclick = function(e){
+          if (sliderLeft === 0) {
+            var thisPage = e.target || e.srcELement;
+            thisPage = thisPage.nodeName === 'LI' ? thisPage : thisPage.parentNode;
+            nextPage = thisPage.getAttribute('page-data') *1;
+            if(nextPage > currentPage) {
+              pause();
+              switcher(currentPage, nextPage, 'l');
+              autoSwitch();
+            } else if (nextPage < currentPage) {
+              pause();
+              switcher(currentPage, nextPage, 'r');
+              autoSwitch();
+            }
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>

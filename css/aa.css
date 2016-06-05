@@ -86,7 +86,7 @@ header {
 /********通用样式**********/
 /*按钮下拉小三角*/
 .top_nav_select{
-	position:relative;
+	position:absolute;
 	border-color: #c2c2c2 transparent transparent;
 	border-width:4px 4px 0;
 	border-style:solid dashed dashed;
@@ -210,22 +210,94 @@ header {
 
 /**********右侧导航条**********/
 #right_header {
-
+	
 }
 #right_header:after {
 	content:"";
 	display:block;
 	clear:both;
 }
-#right_header p {
+#login > p, #login_succ > p {
 	line-height:40px;
 	height:44px;
 	border-bottom:3px solid #8f2f2f;
-	width:60px;
 	text-align:center;
 	background-image:linear-gradient(to bottom,#e01414,#ce1111 50%,#bb0e0e 100%);
 	color:#fff;
+	padding:0 18px;
 }
+#right_header p.lf>a:hover {
+	text-decoration:none;
+}
+/******** 登录框 ********/
+#login {
+	position:relative;
+}
+#login_succ {
+	position:relative;
+	float:left;
+}
+#login_succ:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+#login_box {
+	position:absolute;
+	width:250px;
+	padding-top: 20px;
+	top:35px;
+	color:#333;
+	display:none;/****************/
+}
+#login_box a {
+	color:#333;
+}
+#form {
+	background-color:#fff;
+	padding:25px 35px 5px;
+	box-shadow:0 0 10px #ddd;
+}
+#form input {
+	width:100%;
+	height:30px;
+	outline:none;
+	margin-bottom:10px;
+}
+#form input:not([type='button']) {
+	border:1px solid #ddd;
+	padding:2px 4px;
+	font-family:'u5b8bu4f53';
+}
+#form p {
+	margin-bottom:15px;
+}
+#form p:last-child:after {
+	content:'';
+	display:block;
+	clear:both;
+}
+#form a:hover {
+	color:#aaa;
+}
+#form input[type='button']{
+	background-image: -webkit-linear-gradient(#5eba6d, #3ca051);
+	background-image: -o-linear-gradient(#5eba6d, #3ca051);
+	background-image: linear-gradient(#5eba6d, #3ca051);
+	border:none;
+	color:#fff;
+	font-weight:bold;
+	font-family:'ËÎÌå';
+}
+#form .tips{
+	display:none;
+}
+.welcome {
+	color:#fff;
+	margin-right:10px;
+	line-height:43px;
+}
+
 #right_header #right_header:after {
 	content:'';
 	display:block;
@@ -261,13 +333,13 @@ header {
 #right_header .register_email>a {
 	display:inline-block;
 	color:#fff;
-	width:72px;
+	/*width:72px;*/
 	height:43px;
 	line-height:43px;
 }
 #right_header .register_email>a>b {
-	top:-33px;
-	right:-79px;
+	top:18px;
+	right:9px;
 }
 #right_header #register_mail {
 	display:none;
@@ -547,6 +619,7 @@ ul.slide-control li.active p {
 	width:310px;
 	height:265px;
 	overflow: hidden;
+	margin-top:5px;
 }
 /****** tab标签页 *******/
 .tab-bd-con {
@@ -797,7 +870,6 @@ div.gongyi ul>div>a {
 	width:960px;
 	margin:0 auto;
 	position:relative;
-	padding-top:28px;
 }
 .nav-bottom .nav-content:after {
 	content:'';
@@ -805,6 +877,7 @@ div.gongyi ul>div>a {
 	clear:both;
 }
 /*** 顶部按钮 ***/
+
 .nav-bottom .nav-top-button {
 	border:1px solid #ddd;
 	width:100px;
@@ -825,16 +898,23 @@ div.gongyi ul>div>a {
 	border:1px solid #d2d2d2;
 	background-color:#fafafa;
 }
-span.button i.traig {
+span.button i {
 	width:0;
 	height:0;
 	border:4px solid transparent;
-	border-bottom-color:#45454d;
 	position:relative;
+}
+span.button .traig-up {	
+	border-bottom-color:#45454d;	
 	top:-15px;
+}
+span.button .traig-down {	
+	border-top-color:#45454d;	
+	top:2px;
 }
 .nav-list-box {
 	margin-left:-12px;
+	padding-top:30px;
 }
 .nav-box {
 	float:left;
@@ -924,7 +1004,13 @@ ul.nav-list li.title {
 	padding-right:3px;
 	font-family:Arial;
 }
-
+.hide {
+	display:none;
+}
+.fixed {
+	position:fixed;
+	bottom:0;
+}
 
 
 

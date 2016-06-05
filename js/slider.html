@@ -75,9 +75,9 @@
   <body>
     <div class="slide" id="slide">
       <ul class="slide-items">
-        <li class="" style="display: block;"><img alt="" width="400" src="http://cdn.attach.w3cfuns.com/notes/pics/201604/12/133558me3cx9lh5h5lhohc.png"/></li>
-        <li class=""><img alt="" width="400" src="http://cdn.attach.w3cfuns.com/notes/pics/201604/12/133556j9zsqxr1yxix7z0r.png"/></li>
-        <li class=""><img alt="" width="400" src="http://cdn.attach.w3cfuns.com/notes/pics/201604/12/133551a37j6moyp587bmd6.jpg"/></li>
+        <li class="" style="display: block;"><img alt="" width="400" src="http://cdn.attach.w3cfuns.com/notes/pics/201604/12/133558me3cx9lh5h5lhohc.png"/>1</li>
+        <li class=""><img alt="" width="400" src="http://cdn.attach.w3cfuns.com/notes/pics/201604/12/133556j9zsqxr1yxix7z0r.png"/>2</li>
+        <li class=""><img alt="" width="400" src="http://cdn.attach.w3cfuns.com/notes/pics/201604/12/133551a37j6moyp587bmd6.jpg"/>3</li>
         <li class=""><img alt="" width="400" src="http://cdn.attach.w3cfuns.com/notes/pics/201604/12/133551oqp166zbjvvyvkye.jpg"/></li>
         <li class=""><img alt="" width="400" src="http://cdn.attach.w3cfuns.com/notes/pics/201604/12/133551egh8dty91jhh5y4g.jpg"/></li>
         <li class=""><img alt="" width="400" src="http://cdn.attach.w3cfuns.com/notes/pics/201604/12/133551lzbmwbtsmm8w1nmn.jpg"/></li>
@@ -143,13 +143,17 @@
     var slideBox = document.getElementById(condition.slideBox);
     var slider = slideBox.children[0];
     var slideContent = slider.children;
+
     var option = slideBox.children[1];
     var last = option.children[0];
+    //console.log(last);
     var next = option.children[1];
     var width = slideBox.offsetWidth;
+    //console.log(width);
     var progress = document.getElementById(condition.progress);
     var progressBar = progress.children;
     var progressBarWidth = progress.children[0].offsetWidth * 10;
+    console.log(progressBarWidth);
     var length = slideContent.length - 1;
     var currentPage = 0;
     var nextPage = 0;
@@ -265,7 +269,7 @@
       if (sliderLeft === 0) {
         var thisPage = dom.target || dom.srcElement;
         thisPage = thisPage.nodeName.toUpperCase() === 'LI' ? thisPage : thisPage.parentNode;
-        nextPage = thisPage.getAttribute('page-data') >> 0;
+        nextPage = thisPage.getAttribute('page-data') * 1;
         if (nextPage > currentPage) {
           pause();
           switcher(currentPage, nextPage, 'l');
