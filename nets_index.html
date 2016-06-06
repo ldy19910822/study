@@ -9,206 +9,209 @@
  </head>
  <body>
   <!-- 顶部导航条 -->
-  <header>
-		<div id="header_main">
-		<div id="top_header">
-			<!-- 左侧导航 -->
-			<div id="left_header" class="lf">
-				<div class='nets_appli'>
-					<a class='entry_bgblack'>应用<b class='top_nav_select'></b></a>
-					<div class="top_header_menu nav-select-appli">
-						<ul class='nav-select-list'>
-							<li><a href="#">网易新闻</a></li>
-							<li><a href="#">网易云音乐</a></li>
-							<li><a href="#">网易云阅读</a></li>
-							<li><a href="#">有道云笔记</a></li>
-							<li><a href="#">网易美聊</a></li>
-							<li><a href="#">网易公开课</a></li>
-							<li><a href="#">网易彩票</a></li>
-							<li><a href="#">有道词典</a></li>
-							<li><a href="#">邮箱大师</a></li>
-							<li><a href="#">LOFTER</a></li>
-							<li><a href="#">网易云课堂</a></li>
-							<li><a href="#">青果商城</a></li>
-						</ul>
-					</div>
-				</div>
-				<a href="#">网易首页</a>
-			</div>
-			<!-- 右侧导航 -->
-			<div id="right_header" class="rt">
-        <!-- 登录 -->
-        <div id='login' class='lf'>
-  				<p class="lf"><a href='#'>登录</a></p>
-          <!-- 登录框 -->
-          <div class="login" id='login_box'>
-            <form action='data/login.php' id='form'>
-              <input type='text' name='uname' placeholder='网易邮箱/常用邮箱' id='uname'>
-              <input type='password' name='upwd' id='upwd'placeholder='请输入密码'>
-              <p class='tips hide'>用户名或密码错误</p>
-              <input type='button' value='登&nbsp;&nbsp;录' id='login_btn'>
-              <p><a href="" class='lf'>忘记密码?</a><a href="" class='rt'>注册邮箱</a></p>
-            </form>
+  <div id="header_main">
+  <div id="top_header">
+    <!-- 左侧导航 -->
+    <div id="left_header" class="lf">
+      <div class='nets_appli'>
+        <a class='entry_bgblack'>应用<b class='top_nav_select'></b></a>
+        <div class="top_header_menu nav-select-appli">
+          <ul class='nav-select-list'>
+            <li><a href="#">网易新闻</a></li>
+            <li><a href="#">网易云音乐</a></li>
+            <li><a href="#">网易云阅读</a></li>
+            <li><a href="#">有道云笔记</a></li>
+            <li><a href="#">网易美聊</a></li>
+            <li><a href="#">网易公开课</a></li>
+            <li><a href="#">网易彩票</a></li>
+            <li><a href="#">有道词典</a></li>
+            <li><a href="#">邮箱大师</a></li>
+            <li><a href="#">LOFTER</a></li>
+            <li><a href="#">网易云课堂</a></li>
+            <li><a href="#">青果商城</a></li>
+          </ul>
+        </div>
+      </div>
+      <a href="#">网易首页</a>
+    </div>
+    <!-- 右侧导航 -->
+    <div id="right_header" class="rt">
+          <!-- 登录 -->
+          <div id='login' class='lf'>
+            <p class="lf"><a href='#'>登录</a></p>
+            <!-- 登录框 -->
+            <div class="login" id='login_box'>
+              <form action='data/login.php' id='form'>
+                <input type='text' name='uname' placeholder='网易邮箱/常用邮箱' id='uname'>
+                <input type='password' name='upwd' id='upwd'placeholder='请输入密码'>
+                <p class='tips hide'>用户名或密码错误</p>
+                <input type='button' value='登&nbsp;&nbsp;录' id='login_btn'>
+                <p><label><input type='checkbox' name='remmber' id='ckb'>七天之内免登录</label><a href="" class='rt'>忘记密码?</a></p>
+              </form>
+            </div>
           </div>
+          <!-- 登录成功显示 -->
+          <div id="login_succ" class='hide'>
+            
+          </div>
+      <div class="lf register_email"><!-- span.hover -->      
+        <a href="#">
+          注册免费邮箱
+          <b class='top_nav_select'></b>
+        </a>
+        <!-- 邮箱注册 -->
+        <div id='register_mail'>
+          <ul>
+            <li><a href="#">注册VIP邮箱（特权邮箱，付费）</a></li>
+            <li><a href="#">免费下载网易官方手机邮箱应用</a></li>
+          </ul>
         </div>
-        <!-- 登录成功显示 -->
-        <div id="login_succ" class='hide'>
-          
-        </div>
-				<div class="lf register_email"><!-- span.hover -->			<a href="#">
-						注册免费邮箱
-						<b class='top_nav_select'></b>
-					</a>
-					<!-- 邮箱注册 -->
-					<div id='register_mail'>
-						<ul>
-							<li><a href="#">注册VIP邮箱（特权邮箱，付费）</a></li>
-							<li><a href="#">免费下载网易官方手机邮箱应用</a></li>
-						</ul>
-					</div>
-				</div>
-				<ul class="lt">
-					<li class='top_header_kaola'><!--考拉-->
-						<div class='top_header_box'>
-							<a class='entry_bgblack kaola'>
-								<!-- <s class='kaola'></s> -->
-								<b class='top_nav_select'></b>
-							</a>
-							<div class="top_header_menu nav-select-kaola"><!--考拉下拉选择-->
-								<ul class='nav-select-list'>
-									<li><a href="#">母婴专区</a></li>
-									<li><a href="#">美容彩妆</a></li>
-									<li><a href="#">家居日用</a></li>
-									<li><a href="#">进口美食</a></li>
-									<li><a href="#">营养保健</a></li>
-									<li><a href="#">海外直邮</a></li>
-									<li><a href="#">108元现金红包</a></li>
-									<li><a href="#">客户端下载</a></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class='top_header_mail'><!--邮箱-->
-						<div class='top_header_box'>
-							<a class='entry_bgblack mail'>
-								<!-- <s class='mail'></s> -->
-								<b class='top_nav_select'></b>
-							</a>
-							<div class="top_header_menu nav-select-mail"><!--邮箱下拉选择-->
-								<ul class='nav-select-list'>
-									<li><a href="#">免费邮箱</a></li>
-									<li><a href="#">VIP邮箱</a></li>
-									<li><a href="#">企业邮箱</a></li>
-									<li><a href="#">免费注册</a></li>
-									<li><a href="#">快速注册</a></li>
-									<li><a href="#">客户点下载</a></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class='top_header_pay'><!--钱包-->
-						<div class='top_header_box'>
-							<a class='entry_bgblack pay'>
-								<!-- <s class='pay'></s> -->
-								<b class='top_nav_select'></b>
-							</a>
-							<div class="top_header_menu nav-select-pay"><!--钱包下拉选择-->
-								<ul class='nav-select-list'>
-									<li><a href="#">一卡通充值</a></li>
-									<li><a href="#">一卡通购买</a></li>
-									<li><a href="#">我的网易宝</a></li>
-									<li><a href="#">网易理财</a></li>
-									<li><a href="#">立马赚钱</a></li>
-									<li><a href="#">网易财经App下载</a></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class='top_header_dianshang'><!--电商-->
-						<div class='top_header_box'>
-							<a class='entry_bgblack dianshang'>
-								<!-- <s class='dianshang'></s> -->
-								<b class='top_nav_select'></b>
-							</a>
-							<div class="top_header_menu nav-select-dianshang"><!--电商下拉选择-->
-								<ul class='nav-select-list'>
-									<li><a href="#">彩票</a></li>
-									<li><a href="#">1元欢乐购</a></li>
-									<li><a href="#">贵金属</a></li>
-									<li><a href="#">车险</a></li>
-									<li><a href="#">严选</a></li>
-									<li><a href="#">电影票</a></li>
-									<li><a href="#">火车票</a></li>
-									<li><a href="#">秀品商城</a></li>
-									<li><a href="#">青果商城</a></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class='top_header_huati'><!--相亲-->
-						<div class='top_header_box'>
-							<a class='entry_bgblack huati'>
-								<!-- <s class='huati'></s> -->
-								<b class='top_nav_select'></b>
-							</a>
-							<div class="top_header_menu nav-select-huati"><!--相亲下拉选择-->
-								<ul class='nav-select-list'>
-									<li><a href="#">找缘分</a></li>
-									<li><a href="#">恋爱真心话</a></li>
-									<li><a href="#">我的同城约会</a></li>
-									<li><a href="#">下载同城约会APP</a></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class='top_header_lofter'><!--LOFTER-->
-						<div class='top_header_box'>
-							<a class='entry_bgblack lofter'>
-								<!-- <s class='lofter'></s> -->
-								<b class='top_nav_select'></b>
-							</a>
-							<div class="top_header_menu nav-select-lofter"><!--LOFTER下拉选择-->
-								<ul class='nav-select-list'>
-									<li><a href="#">进入LOFTER</a></li>
-									<li><a href="#">热门话题</a></li>
-									<li><a href="#">专题精选</a></li>
-									<li><a href="#">下载LOFTER客户端</a></li>
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li class='top_header_bobo'><!--超女-->
-						<div class='top_header_box'>
-							<a class='entry_bgblack bobo'>
-								<!-- <s class='bobo'></s> -->
-								<b class='top_nav_select'></b>
-							</a>
-							<div class="top_header_menu nav-select-bobo"><!--bobo下拉选择-->
-								<ul class='nav-select-list'>
-									<li><a href="#">超女网易赛区报名</a></li>
-									<li><a href="#">女神在线直播</a></li>
-									<li><a href="#">女神大厅</a></li>
-									<li><a href="#">女神咨询</a></li>
-									<li><a href="#">下载BoBo客户端</a></li>
-								</ul>
-							</div>
-						</div>	
-					</li>
-					<li>
-						<div class='top_header_box'>
-							<a class='title_mobile entry_bgblack mobile'>
-								<!-- <s class='mobile'></s> -->
-							</a>
-							<div class="qrcode-img">
-								<a href="#"><img src="img/topapp.jpg" alt=""></a>
-							</div>
-						</div>	
-					</li>
-				</ul>
-			</div>
-		</div>
-		</div>
-  </header>
+      </div>
+      <!-- 退出登录 -->
+      <div class="logout hide">
+        <a href="">安全退出登录</a>
+      </div>
+      <ul class="lt">
+        <li class='top_header_kaola'><!--考拉-->
+          <div class='top_header_box'>
+            <a class='entry_bgblack kaola'>
+              <!-- <s class='kaola'></s> -->
+              <b class='top_nav_select'></b>
+            </a>
+            <div class="top_header_menu nav-select-kaola"><!--考拉下拉选择-->
+              <ul class='nav-select-list'>
+                <li><a href="#">母婴专区</a></li>
+                <li><a href="#">美容彩妆</a></li>
+                <li><a href="#">家居日用</a></li>
+                <li><a href="#">进口美食</a></li>
+                <li><a href="#">营养保健</a></li>
+                <li><a href="#">海外直邮</a></li>
+                <li><a href="#">108元现金红包</a></li>
+                <li><a href="#">客户端下载</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class='top_header_mail'><!--邮箱-->
+          <div class='top_header_box'>
+            <a class='entry_bgblack mail'>
+              <!-- <s class='mail'></s> -->
+              <b class='top_nav_select'></b>
+            </a>
+            <div class="top_header_menu nav-select-mail"><!--邮箱下拉选择-->
+              <ul class='nav-select-list'>
+                <li><a href="#">免费邮箱</a></li>
+                <li><a href="#">VIP邮箱</a></li>
+                <li><a href="#">企业邮箱</a></li>
+                <li><a href="#">免费注册</a></li>
+                <li><a href="#">快速注册</a></li>
+                <li><a href="#">客户点下载</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class='top_header_pay'><!--钱包-->
+          <div class='top_header_box'>
+            <a class='entry_bgblack pay'>
+              <!-- <s class='pay'></s> -->
+              <b class='top_nav_select'></b>
+            </a>
+            <div class="top_header_menu nav-select-pay"><!--钱包下拉选择-->
+              <ul class='nav-select-list'>
+                <li><a href="#">一卡通充值</a></li>
+                <li><a href="#">一卡通购买</a></li>
+                <li><a href="#">我的网易宝</a></li>
+                <li><a href="#">网易理财</a></li>
+                <li><a href="#">立马赚钱</a></li>
+                <li><a href="#">网易财经App下载</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class='top_header_dianshang'><!--电商-->
+          <div class='top_header_box'>
+            <a class='entry_bgblack dianshang'>
+              <!-- <s class='dianshang'></s> -->
+              <b class='top_nav_select'></b>
+            </a>
+            <div class="top_header_menu nav-select-dianshang"><!--电商下拉选择-->
+              <ul class='nav-select-list'>
+                <li><a href="#">彩票</a></li>
+                <li><a href="#">1元欢乐购</a></li>
+                <li><a href="#">贵金属</a></li>
+                <li><a href="#">车险</a></li>
+                <li><a href="#">严选</a></li>
+                <li><a href="#">电影票</a></li>
+                <li><a href="#">火车票</a></li>
+                <li><a href="#">秀品商城</a></li>
+                <li><a href="#">青果商城</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class='top_header_huati'><!--相亲-->
+          <div class='top_header_box'>
+            <a class='entry_bgblack huati'>
+              <!-- <s class='huati'></s> -->
+              <b class='top_nav_select'></b>
+            </a>
+            <div class="top_header_menu nav-select-huati"><!--相亲下拉选择-->
+              <ul class='nav-select-list'>
+                <li><a href="#">找缘分</a></li>
+                <li><a href="#">恋爱真心话</a></li>
+                <li><a href="#">我的同城约会</a></li>
+                <li><a href="#">下载同城约会APP</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class='top_header_lofter'><!--LOFTER-->
+          <div class='top_header_box'>
+            <a class='entry_bgblack lofter'>
+              <!-- <s class='lofter'></s> -->
+              <b class='top_nav_select'></b>
+            </a>
+            <div class="top_header_menu nav-select-lofter"><!--LOFTER下拉选择-->
+              <ul class='nav-select-list'>
+                <li><a href="#">进入LOFTER</a></li>
+                <li><a href="#">热门话题</a></li>
+                <li><a href="#">专题精选</a></li>
+                <li><a href="#">下载LOFTER客户端</a></li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <li class='top_header_bobo'><!--超女-->
+          <div class='top_header_box'>
+            <a class='entry_bgblack bobo'>
+              <!-- <s class='bobo'></s> -->
+              <b class='top_nav_select'></b>
+            </a>
+            <div class="top_header_menu nav-select-bobo"><!--bobo下拉选择-->
+              <ul class='nav-select-list'>
+                <li><a href="#">超女网易赛区报名</a></li>
+                <li><a href="#">女神在线直播</a></li>
+                <li><a href="#">女神大厅</a></li>
+                <li><a href="#">女神咨询</a></li>
+                <li><a href="#">下载BoBo客户端</a></li>
+              </ul>
+            </div>
+          </div>  
+        </li>
+        <li>
+          <div class='top_header_box'>
+            <a class='title_mobile entry_bgblack mobile'>
+              <!-- <s class='mobile'></s> -->
+            </a>
+            <div class="qrcode-img">
+              <a href="#"><img src="img/topapp.jpg" alt=""></a>
+            </div>
+          </div>  
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
   <!-- 主体部分内容 --> 
   <section>
   	<!-- 主体内容部分头部 -->

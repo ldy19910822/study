@@ -7,7 +7,7 @@ $('.nets_appli').on('mouseover',function(){
 });
 $('.nets_appli').on('mouseout',function(){
 	$('.nav-select-appli').css('display','none');
-});
+});	
 
 /**顶部右侧导航条下拉**/
 /*注册邮箱*/
@@ -103,6 +103,7 @@ $('#login').hover(
 		$('#login_box').hide();
 	}
 );
+
 $('#login_btn').click(function(){
 	if(!(uname.value || upwd.value)){		
 		return;
@@ -113,14 +114,17 @@ $('#login_btn').click(function(){
 			data:$('#form').serialize(),
 			success:function(data){
 				if(data==='OK'){
-					$('#login').hide();
-					$('#login_succ').removeClass('hide').html('<span class="lf welcome">欢迎您</span><p class="lf">'+uname.value+'</p>');
-					var register_email = $('.register_email').html();
-					$('.register_email').html('<a href="">安全退出</a>').css('padding','0 15px');
+					loginOperate(uname.value);					
+					/** 写入缓存  下次免登录 **/
+					//如果7天内免登陆
+					if(ckb.checked){
+						localStorage['uname']=uname.value;
+						localStorage['upwd']=encodeURIComponent(upwd.value);
+					}
 					uname.value = '';
 					upwd.value = '';
-					/** 写入缓存  下次免登录 **/
-					// 增加退出登录功能
+					
+
 				} else {
 					$('.tips').removeClass('hide');
 				}
@@ -131,5 +135,28 @@ $('#login_btn').click(function(){
 		})
 	}
 });
+window.onload = function(){
+	//免登陆
+	if(localStorage['uname']){
+		loginOperate(localStorage['uname']);
+	}
+}
 // 邮箱注册功能
 // form表单输入下拉选择功能
+function loginOperate(str){
+	$('#login').hide();
+	$('#login_succ').removeClass('hide').html('<span class="lf welcome">欢迎您</span><p class="lf">'+str+'</p>');
+	$('.register_email').addClass('hide');
+	$('.logout').removeClass('hide');
+}
+// 增加退出登录功能
+$('.logout').click(function(){
+	if(localStorage['uname']){
+		localStorage.clear();
+	}
+	$('.register_email').removeClass('hide');
+	$(this).addClass('hide');
+	$('#login').show();
+	$('#login_succ').addClass('hide').html('');
+	
+});

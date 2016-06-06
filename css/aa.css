@@ -69,6 +69,7 @@ header {
 #header_main {	
 	height:43px;
 	width:100%;
+	background-color:#333;
 }
 #header_main a {
 	color:#fff;
@@ -112,8 +113,8 @@ header {
 	color:#fff;
 }
 #left_header .nets_appli>a>b {
-	right:-5px;
-	top:10px;
+	right:87px;
+	top:18px;
 }
 #left_header .nets_appli>a:hover {
 	cursor:pointer;
@@ -289,15 +290,30 @@ header {
 	font-weight:bold;
 	font-family:'ËÎÌå';
 }
+#form label {
+	position:relative;
+	top:-4px;
+	margin:0;
+	font-weight:normal;
+}
+#form input[type='checkbox']{
+	width:12px;
+	height:12px;
+	position:relative;
+	top:2px;
+	margin-right:5px;
+}
 #form .tips{
-	display:none;
+	
 }
 .welcome {
 	color:#fff;
 	margin-right:10px;
 	line-height:43px;
 }
-
+#right_header {
+	position:relative;
+}
 #right_header #right_header:after {
 	content:'';
 	display:block;
@@ -322,15 +338,23 @@ header {
 	display:block;
 }
 #right_header .register_email {
-	position:relative;
+	position:relative;	
 	padding:0 25px 0 15px;
+}
+#right_header .register_email,.logout {
 	height:43px;
 }
 #right_header .register_email:before {
 	content:'';
 	display: table;
 }
-#right_header .register_email>a {
+/*退出登录按钮*/
+.logout {
+	/*position:absolute;*/
+	padding:0 15px;
+	float:left;
+}
+#right_header .register_email>a,.logout>a {
 	display:inline-block;
 	color:#fff;
 	/*width:72px;*/
@@ -824,7 +848,8 @@ div.gongyi ul>div>a {
 .side-bar {
 	position:fixed;
 	bottom:200px;
-	right:200px;
+	left:50%;
+	margin-left:490px;
 }
 .side-bar .qrcode {	
 	margin-bottom:8px;
