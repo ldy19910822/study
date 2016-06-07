@@ -160,3 +160,29 @@ $('.logout').click(function(){
 	$('#login_succ').addClass('hide').html('');
 	
 });
+//登录框输入提示功能
+uname.addEventListener('keyup',function(){
+	var v = this.value;
+	if(v!=undefined){
+		$('.user_login').removeClass('hide');
+		
+		//console.log(v);
+		var addStr = ['@126.com','@163.com','@yeah.com','@188.com','@vip.163.com','@vip.126.com'];
+
+		var str = '<ul>';
+		for(var i = 0;i<addStr.length;i++){
+			str+= '<li>' + v + addStr[i] + '</li>';
+		}
+		str += "</ul>";
+		$('.user_login').html(str);
+	}
+	if(!v){
+		$('.user_login').addClass('hide');
+	}
+});
+//登录提示框点击功能
+$('.user_login').delegate('ul>li','click',function(e){
+	console.log(e.target.innerHTML);
+	uname.value = e.target.innerHTML;
+	$('.user_login').addClass('hide');
+})

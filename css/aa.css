@@ -270,6 +270,32 @@ header {
 	padding:2px 4px;
 	font-family:'u5b8bu4f53';
 }
+#form input:not([type='button']):focus {
+	border-color:#4AAFE9;
+}
+#form .user_login {
+	position:absolute;
+	background-color:#fff;
+	z-index:10;
+	top:75px;
+}
+#form .user_login ul {
+	background-color:#FAFBFD;
+	width:180px;
+	border:1px solid #ddd;
+	border-bottom-left-radius:3px;
+	border-bottom-right-radius:3px;
+}
+#form .user_login ul li {
+	padding:1px 0 1px 10px;
+	color:#909AB0;
+	font-family: '微软雅黑';
+}
+#form .user_login ul li:hover {
+	background-color:#E1EAF1;
+	cursor:pointer;
+	color:#333;
+}
 #form p {
 	margin-bottom:15px;
 }
