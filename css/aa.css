@@ -87,11 +87,15 @@ header {
 /********通用样式**********/
 /*按钮下拉小三角*/
 .top_nav_select{
-	position:absolute;
-	border-color: #c2c2c2 transparent transparent;
-	border-width:4px 4px 0;
-	border-style:solid dashed dashed;
+	position:absolute;	
 	right:10px;
+	border:4px solid transparent;
+}
+.down {
+	border-top-color:#c2c2c2;
+}
+.up {
+	border-bottom-color:#c2c2c2;
 }
 
 
@@ -113,8 +117,13 @@ header {
 	color:#fff;
 }
 #left_header .nets_appli>a>b {
-	right:87px;
-	top:18px;
+	right:87px;	
+}
+#left_header .nets_appli>a>b.down {
+	top:18px;	
+}
+#left_header .nets_appli>a>b.up {
+	top:14px;	
 }
 #left_header .nets_appli>a:hover {
 	cursor:pointer;
@@ -218,7 +227,7 @@ header {
 	display:block;
 	clear:both;
 }
-#login > p, #login_succ > p {
+#login > p, #login_succ  p {
 	line-height:40px;
 	height:44px;
 	border-bottom:3px solid #8f2f2f;
@@ -337,6 +346,22 @@ header {
 	margin-right:10px;
 	line-height:43px;
 }
+#login_succ p.lf b {
+	position:relative;
+	right:-5px;
+}
+#login_succ p.lf b.down {
+	top:9px;
+}
+#login_succ p.lf b.up {
+	top:-7px;
+}
+.top_header_menu.nav-select-pop {
+	left:55px;
+	z-index:100;
+}
+
+
 #right_header {
 	position:relative;
 }
@@ -469,7 +494,12 @@ header {
 #right_header ul>li>.top_header_box>a>b {
 	position: absolute;
 	right: 5px;
+}
+#right_header ul>li>.top_header_box>a>b.down {
 	top: 10px;
+}
+#right_header ul>li>.top_header_box>a>b.up {
+	top: 6px;
 }
 #right_header ul>li>.top_header_box>a.title_mobile {
 	padding:1px 11px 0 11px;
@@ -507,7 +537,7 @@ header {
 
 
 /******************主体部分内容********************/
-section {margin-top:80px;}
+section {margin-top:50px;}
 .content:after {
 	display:block;
 	content:'';

@@ -4,9 +4,11 @@
 /**应用**/
 $('.nets_appli').on('mouseover',function(){
 	$('.nav-select-appli').css('display','block');
+	$('.nets_appli>a>b').removeClass('down').addClass('up');
 });
 $('.nets_appli').on('mouseout',function(){
 	$('.nav-select-appli').css('display','none');
+	$('.nets_appli>a>b').removeClass('up').addClass('down');
 });	
 
 /**顶部右侧导航条下拉**/
@@ -18,40 +20,32 @@ function(){
 	$('#register_mail').css('display','none');
 }
 )
-/***顶部右侧主导航下拉***/
-/*
-	$('#right_header .entry_bgblack').parent().on('mouseover',function(e){
-		display(e,'block');
-	});
-	$('#right_header .entry_bgblack').parent().on('mouseout',function(e){
-		display(e,'none');
-	})
-	function display(e,dis){
-		var target=e.target;
-		//console.log(e.target);
-		//if(target.nodeName=='S'||target.nodeName=='B'){target=target.parentNode.parentNode}
-		//if(target.nodeName=='A'){target=e.target.parentNode.parentNode}
-		console.log(target);
-		//if(target.nodeName=='LI'&&(target.className!='')){
-			//console.log(target);
-			var cn=target.className.slice(11);
-			//console.log($('.nav-select-'+cn)[0]);
-			$('.nav-select-'+cn).css('display',dis);
-		//}
-	}
-*/
+
+//登录成功后红色按钮下拉监听
+$('#login_succ').on('mouseover','div.pop',function(){
+	console.log(11111);
+	$('.nav-select-pop').removeClass('hide');
+	$('#login_succ p.lf b').removeClass('down').addClass('up');
+});
+$('#login_succ').on('mouseout','div.pop',function(){
+	$('.nav-select-pop').addClass('hide');
+	$('#login_succ p.lf b').removeClass('up').addClass('down');
+});
+
 var lis = document.querySelectorAll('#right_header>ul>li');
 for(var i=0;i<lis.length;i++){
 	//console.log(lis[key]);
 	var li=lis[i];
-	li.addEventListener('mouseover',function(){
+	li.addEventListener('mouseover',function(e){		
 		var cn=this.className.slice(11);
 		$('.nav-select-'+cn).show();
+		$('.'+cn+' .top_nav_select').removeClass('down').addClass('up');
 		this.style.backgroundColor='#1e1e1e';
 	},true);
-	li.addEventListener('mouseout',function(){
+	li.addEventListener('mouseout',function(e){
 		var cn=this.className.slice(11);
 		$('.nav-select-'+cn).hide();
+		$('.'+cn+' .top_nav_select').removeClass('up').addClass('down');
 		this.style.backgroundColor='';
 	},true)
 }
@@ -145,7 +139,16 @@ window.onload = function(){
 // form表单输入下拉选择功能
 function loginOperate(str){
 	$('#login').hide();
-	$('#login_succ').removeClass('hide').html('<span class="lf welcome">欢迎您</span><p class="lf">'+str+'</p>');
+	//登录成功后的下拉菜单
+	var arr = ['进入用户中心','进入我的邮箱','进入我的LOFTER','进入我的相册','进入我的花田','进入我的同城约会','进入我的博客','进入我的云笔记','进入我的彩票','进入我的贵金属','进入我的车险','进入我的保险','进入网易商城','进入网易云阅读','进入云课堂','进入我的考拉'];
+	var strr = '<div class="top_header_menu nav-select-pop hide"><ul class="nav-select-list">';
+	for (var i = 0; i < arr.length; i++) {
+		strr+='<li><a href="">'+arr[i]+'</a></li>';
+	}
+	strr+='</ul></div>';
+	$('#login_succ').removeClass('hide').html('<span class="lf welcome">欢迎您</span><div class="pop lf"><p class="lf">'+str+'</p></div>');
+	$('#login_succ .pop').append(strr);
+	$('#login_succ p.lf').append('<b class="top_nav_select down"></b>');	
 	$('.register_email').addClass('hide');
 	$('.logout').removeClass('hide');
 }
@@ -164,9 +167,11 @@ $('.logout').click(function(){
 uname.addEventListener('keyup',function(){
 	var v = this.value;
 	if(v!=undefined){
+		if((i = v.indexOf('@'))!=-1){
+			v.splice(i);
+		}
 		$('.user_login').removeClass('hide');
-		
-		//console.log(v);
+
 		var addStr = ['@126.com','@163.com','@yeah.com','@188.com','@vip.163.com','@vip.126.com'];
 
 		var str = '<ul>';

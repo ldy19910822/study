@@ -1,11 +1,5 @@
 SET NAMES UTF8;
 
-DROP DATABASE IF EXISTS nets;
-
-CREATE DATABASE nets CHARSET=UTF8;
-
-use nets;
-
 CREATE TABLE IF NOT EXISTS nets_users (
 	user_id int(11) PRIMARY KEY AUTO_INCREMENT,
 	user_name varchar(100),
